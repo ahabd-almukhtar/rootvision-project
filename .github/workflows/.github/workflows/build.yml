@@ -1,0 +1,33 @@
+name: Build EXE
+
+on:
+  push:
+    branches: [ "main" ]
+
+jobs:
+  build:
+    runs-on: windows-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v3
+
+    - name: Setup Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.10'
+
+    - name: Install dependencies
+      run: |
+        pip install pyinstaller
+        pip install matplotlib numpy
+
+    - name: Build exe
+      run: |
+        pyinstaller --onefile --windowed main.py
+
+    - name: Upload exe
+      uses: actions/upload-artifact@v4
+      with:
+        name: RootVision-EXE
+        path: dist/main.exe
