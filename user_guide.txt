@@ -1,0 +1,30 @@
+RootVision Studio — User Guide
+
+1. Open the program.
+2. Pick one of the example problems or type your own function f(x).
+3. Choose the numerical method: Bisection, Newton-Raphson, Secant, or Fixed-Point.
+4. Enter the needed starting values:
+   - Bisection: lower and upper bounds
+   - Newton-Raphson: x0
+   - Secant: x0 and x1
+   - Fixed-Point: x0 and g(x)
+5. Set tolerance and maximum iterations.
+6. Click Run.
+7. Study the outputs:
+   - Left plot: function graph and iteration points
+   - Right plot: convergence history
+   - Table: numerical values at each iteration
+   - Summary box: interpretation of the result
+8. Click Animate to replay the iteration process step by step.
+
+How to build the EXE on Windows:
+1. Install Python on your own computer.
+2. Install packages:
+   pip install numpy matplotlib pyinstaller
+3. Open Command Prompt inside the project folder.
+4. Run:
+   pyinstaller --onefile --windowed --name RootVisionStudio main.py
+5. The EXE will appear inside the dist folder.
+
+Important note:
+The final submission to your instructor should be the generated RootVisionStudio.exe, your PDF report, and this user guide.
